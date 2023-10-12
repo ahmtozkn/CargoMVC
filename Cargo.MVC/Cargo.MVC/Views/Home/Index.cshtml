@@ -1,0 +1,89 @@
+﻿@* @model CargoViewModel
+@{
+
+    var cargoView = ViewBag.CargoViewModel as CargoViewModel;
+}
+
+<partial name="_BannerPartial">
+
+
+    <div  style="text-align:center;margin-top:30px; width:400px" >
+        <form asp-controller="Home" asp-action="Search">
+            <input asp-for="CargoNo" style="width:500px" placeholder="Cargo Takip Numarası Gririnz"  />
+            <button style="text-align:left" type="submit">Ara</button>
+        </form>
+        
+
+        @if(cargoView.Status!=0)
+        {
+         <table class="table table-stripped">
+          <tr>
+              <th>CargoNo</th>
+              <th>Status</th>
+          </tr>
+
+          <tr>
+              <td>@cargoView.CargoNo</td>
+              <td>@cargoView.Status</td>
+          </tr>
+
+          </table>
+           }
+
+
+    </div> *@
+@model CargoViewModel
+@{
+    var cargoView = ViewBag.CargoViewModel as CargoViewModel;
+}
+
+<partial name="_BannerPartial">
+
+    <div class="container mt-4" style="height:500px">
+        <div class="row justify-content-center">
+            <div class="col-md-6" style="height:100px;" >
+                <form asp-controller="Home" asp-action="Search" class="justify-content-center" style="height:500px">
+                    <div style=" background-color:white;display:flex;  align-items:center; justify-content:space-between;   padding:0 7%; margin:2rem 7%; border-radius:30rem;  position:sticky;  top:0; z-index:1000; margin-left:5px; height:100px"  class="input-group mb-2">
+                        <input style="border:none;margin-left:10px;font-size:1.8rem" asp-for="CargoNo" class="form-control" placeholder="Cargo Takip Numarası Giriniz" />
+                        <div class="input-group-append">
+                          
+                                <button  style="margin-left:10px; background-color:transparent; " type="submit">
+                                <i style="margin-right:10px;background-color:transparent; font-size:2.5rem; " class="fas fa-search"></i>
+                            </button>
+                        
+                        </div>
+                        
+                     
+
+
+                    </div>
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color:white">   
+    @if (cargoView.Status != 0)
+    {
+        <div class="row justify-content-center mt-4" style="border-radius:30rem;">
+            <div class="col-md-6">
+                <table class="table table-striped" style="border-radius:30rem;">
+                    <thead>
+                        <tr>
+                            <th>Cargo No</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@cargoView.CargoNo</td>
+                            <td>@cargoView.Status</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    </div>
+       
+    

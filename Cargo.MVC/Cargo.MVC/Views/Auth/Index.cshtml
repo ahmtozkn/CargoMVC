@@ -1,0 +1,8 @@
+﻿@model  UserInfoViewModel
+
+
+@if (User.IsLogged())
+{
+    <p>HoşGeldin</p> @User.GetUserFirstName()
+}
+
