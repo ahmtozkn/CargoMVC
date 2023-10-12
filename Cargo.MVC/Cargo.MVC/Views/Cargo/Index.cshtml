@@ -1,41 +1,4 @@
-﻿@* @model List<CargoViewModel>
-
-<div class="mt-2 mb-2">
-    <a asp-controller="Cargo" asp-action="New" class="btn btn-warning">Cargo Oluştur</a>
-</div>
-
-<div class="row justify-content-center">
-    <div class="col-8">
-
-        <table class="table">
-
-            <tr>
-                <th>CargoNo</th>
-                <th>TelNo</th>
-                <th>SenderFirstName</th>
-                <th>SenderLastName</th>
-                <th>Status</th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.CargoNo </td>
-                    <td>@item.SenderTelNo</td>
-                    <td>@item.SenderFirstName</td>
-                    <td>@item.SenderLastName</td>
-                    <td>@item.Status</td>
-                    <td><a class="btn btn-primary" asp-controller="Cargo" asp-action="Edit" asp-route-id="@item.Id">Güncelleştir </a>
-                    <a class="btn btn-danger" asp-controller="Cargo" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
-                    </td>
-                    
-                </tr>
-            }
-        </table>
-
-    </div>
-    </div> *@
+﻿
 @model List<CargoViewModel>
 
 

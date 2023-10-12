@@ -17,9 +17,6 @@ namespace Cargo.MVC.Controllers
         public async Task<IActionResult> Index(LoginUserViewModel loginUserViewModel)
         {
             ViewBag.AppName = _appSettings.ApplicationName;
-            //var getAllUrl = $"{_appSettings.ApiBaseUrl}/user";
-            //using var client=new HttpClient();
-            //var response = await client.GetFromJsonAsync<List<UserInfoViewModel>>(getAllUrl);
             var getAllUrl=$"{_appSettings.ApiBaseUrl}/user";
             using var client=new HttpClient();
             var response= await client.GetFromJsonAsync<List<UserInfoViewModel>>(getAllUrl);
